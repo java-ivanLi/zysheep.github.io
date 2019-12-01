@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>邂逅git(二)</title>
+      <link href="/2019/11/30/git/2/"/>
+      <url>/2019/11/30/git/2/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>邂逅git(一)</title>
+      <link href="/2019/11/30/git/1/"/>
+      <url>/2019/11/30/git/1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-什么是Git"><a href="#一-什么是Git" class="headerlink" title="一. 什么是Git"></a>一. 什么是Git</h1><blockquote><p>Git官网地址<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a><br>Git源码<a href="https://github.com/git/git/" target="_blank" rel="noopener">https://github.com/git/git/</a> </p></blockquote><h2 id="1-1-Git简介"><a href="#1-1-Git简介" class="headerlink" title="1.1 Git简介"></a>1.1 Git简介</h2><ul><li>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</li><li>Git 是李纳斯·托沃兹( Linus Torvalds )为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</li><li>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。             </li></ul><h2 id="1-2-Git的优点"><a href="#1-2-Git的优点" class="headerlink" title="1.2 Git的优点"></a>1.2 Git的优点</h2><ul><li>大部分操作在本地完成，不需要联网</li><li>速度快、灵活</li><li>尽可能添加数据而不是删除或修改数据</li><li>分支操作非常快捷流畅</li><li>与 Linux命令全面兼容                   </li></ul><h1 id="二-Git和Svn的区别"><a href="#二-Git和Svn的区别" class="headerlink" title="二. Git和Svn的区别"></a>二. Git和Svn的区别</h1><p>  <strong>SVN是集中式版本控制系统</strong>,版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。<br>   <strong>Git是分布式版本控制系统</strong>,没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。<br><img src="../../../../../images/git/1/git%E5%92%8Csvn%E5%8C%BA%E5%88%AB.png" alt=""></p><h1 id="三-Git下载与安装"><a href="#三-Git下载与安装" class="headerlink" title="三. Git下载与安装"></a>三. Git下载与安装</h1><h2 id="3-1-下载Git"><a href="#3-1-下载Git" class="headerlink" title="3.1 下载Git"></a>3.1 下载Git</h2><blockquote><p>Git管网下载<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>     </p></blockquote><p><img src="../../../../../images/git/1/instgit1.png" alt=""><br>执行exe文件<br><img src="../../../../../images/git/1/instgit2.png" alt=""><br>一直点next<br><img src="../../../../../images/git/1/instgit3.png" alt=""><br>桌面鼠标右击,出现<br><img src="../../../../../images/git/1/instgit4.png" alt=""><br><strong>Git Bash</strong>：Unix与Linux风格的命令行，使用最多，推荐最多<br><strong>Git CMD</strong>：Windows风格的命令行<br><strong>Git GUI</strong>：图形界面的Git，不建议初学者使用，尽量先熟悉常用命令        </p><h1 id="四-Git结构"><a href="#四-Git结构" class="headerlink" title="四. Git结构"></a>四. Git结构</h1><p>工作区：就是你在电脑里能看到的目录(写的代码存在工作区)。<br>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件    (.git/index)中，所以我们把暂存区有时也叫作索引(index).(计划要提交的文件)<br>版本库:(本地库)工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br><img src="../../../../../images/git/1/git1.png" alt="">      </p><h1 id="五-Git和代码托管中心"><a href="#五-Git和代码托管中心" class="headerlink" title="五. Git和代码托管中心"></a>五. Git和代码托管中心</h1><h2 id="5-1-代码托管中心"><a href="#5-1-代码托管中心" class="headerlink" title="5.1 代码托管中心"></a>5.1 代码托管中心</h2><p>代码托管中心的任务：<strong>维护远程库</strong><br>局域网环境下：          </p><ul><li>GitLab服务器</li></ul><p>外网环境下:         </p><ul><li>GitHub<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>                </li><li>码云<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></li></ul><h2 id="5-2-本地库与远程库"><a href="#5-2-本地库与远程库" class="headerlink" title="5.2 本地库与远程库"></a>5.2 本地库与远程库</h2><p>团队内部协作和跨团队协作        </p><h2 id="5-3-团队内部协作流程"><a href="#5-3-团队内部协作流程" class="headerlink" title="5.3 团队内部协作流程"></a>5.3 团队内部协作流程</h2><p><img src="../../../../../images/git/1/git2.png" alt="">      </p><h2 id="5-4-跨团队协作"><a href="#5-4-跨团队协作" class="headerlink" title="5.4 跨团队协作"></a>5.4 跨团队协作</h2><p><img src="../../../../../images/git/1/git3.png" alt="">      </p><h1 id="六-Git命令行"><a href="#六-Git命令行" class="headerlink" title="六. Git命令行"></a>六. Git命令行</h1><h2 id="6-1-创建本地库"><a href="#6-1-创建本地库" class="headerlink" title="6.1 创建本地库"></a>6.1 创建本地库</h2><p>右键进入git bash here    </p><pre><code>mkdir blog  创建文件   cd blog     进入blogll -A       查看隐藏的.git文件内容git init    初始化一个 Git 仓库ll .git/    表示查看.git 下的文件列表显示cat .git/config     查看.git/config 内容   </code></pre><p><strong>注意</strong>：.git目录是存放本地库相关的目录和文件，不要对其进行修改和操作  </p><h2 id="6-2-设置签名"><a href="#6-2-设置签名" class="headerlink" title="6.2 设置签名"></a>6.2 设置签名</h2><h3 id="6-2-1-签名概述"><a href="#6-2-1-签名概述" class="headerlink" title="6.2.1 签名概述"></a>6.2.1 签名概述</h3><ol><li>签名的作用:用于标识不同的开发人员</li><li>项目级别（仓库）：仅在当前本地库范围有效</li><li>系统级别：登录当前操作系统的用户范围</li><li>级别优先级:就近原则：项目级别优先级大于系统(用户)级别签名        </li></ol><p><strong>注意</strong>:签名级别必须要设置，如果都不设置，GIT可能会导致命令出差。无法辨别  </p><h3 id="6-2-2-签名命令"><a href="#6-2-2-签名命令" class="headerlink" title="6.2.2 签名命令"></a>6.2.2 签名命令</h3><p><strong>项目级别（仓库）</strong>:仅在当前本地库范围有效     </p><pre><code> git config user.name zysheep git config user.email zysheep@163.com cat .git/config  查看设置结果</code></pre><p><strong>系统级别</strong>:登录当前操作系统的用户范围 </p><pre><code> git config –global user.name zysheep git config –global user.email zysheep@163.com cd ~  家目录 ll –A | grep –i git   查看叫git的文件名称 cat .gitconfig 查看文件内容</code></pre><p><strong>在实际开发过程中，通常只需要设置系统级别即可。如果有特殊需要，再设置项目级别。</strong>      </p><h2 id="6-3-常用命令"><a href="#6-3-常用命令" class="headerlink" title="6.3 常用命令"></a>6.3 常用命令</h2><pre><code> git tatus  用于显示工作目录和暂存区的状态 git add    xxx.txt 将工作区写入暂存区 git rm     命令用于从工作区和索引中删除文件。 git commit -m '备注信息'  将暂存区提交到本地库 git checkout   切换分支或恢复工作树文件 git log        显示提交日志信息 git log –-pretty=oneline 更优雅的显示(查看历史记录) Git log --oneline git reflog   //用于显示需要回退的步骤HEAD</code></pre><h2 id="6-4-永久删除后找回"><a href="#6-4-永久删除后找回" class="headerlink" title="6.4 永久删除后找回"></a>6.4 永久删除后找回</h2><p><strong>git rm</strong> 命令用于从工作区和索引中删除文件。   </p><ol><li>工作区创建文件，通过命令提交到本地库         </li></ol><pre><code> Vim d1.txt   git add d1.txt   git commit –m ‘上传到本地库d1.txt’ d1.txt</code></pre><ol start="2"><li>执行命令进行删除：       </li></ol><pre><code>git rm d1.txt 工作区删除后，提交到本地库git commit –m ‘删除d1.txt’ d1.txt</code></pre><ol start="3"><li>通过日志git reflog 找回          </li></ol><pre><code>$ git reset --hard 15d5002ll查看即可</code></pre><p><strong>注意:</strong>git只要在本地库发生操作，都会进行版本记录。        </p><h2 id="6-5-文件比较"><a href="#6-5-文件比较" class="headerlink" title="6.5 文件比较"></a>6.5 文件比较</h2><p><strong>gid diff</strong> 将工作区中的文件和暂存区进行比较</p><pre><code>vim git.txt    修改内容git diff git.txt       用于显示提交和工作树等之间的更改</code></pre><p><strong>gid diff</strong> 暂存区中的文件和本地库进行比较     </p><pre><code>git add git.txt 将git.txt 工作区添加到暂存区 git diff HEAD git.txt   HEAD代表本地库最新版本指针    git diff  不加文件名git checkout 文件名   退回修改  </code></pre><h1 id="七-分支"><a href="#七-分支" class="headerlink" title="七. 分支"></a>七. 分支</h1><h2 id="7-1-分支概念"><a href="#7-1-分支概念" class="headerlink" title="7.1 分支概念"></a>7.1 分支概念</h2><ol><li>什么是分支？<br>在版本控制过程中，使用多条线同时推进多个任务。          </li></ol><p><img src="../../../../../images/git/1/git4.png" alt=""><br>2. 分支的好处？             </p><ul><li>同时并行推进多个功能开发，提高开发效率</li><li>各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任<br>何影响。</li><li>失败的分支删除重新开始即可    </li></ul><h2 id="7-2-分支命令"><a href="#7-2-分支命令" class="headerlink" title="7.2 分支命令"></a>7.2 分支命令</h2><pre><code> git  branch   查看当前有哪些分支 git branch zyshepp  新建一个分支 git checkout zysheep   切换到指定分支 git branch –a   查看本地和远程分支  git checkout master   切换到接受修改的分支上 git merge   将两个或两个以上的开发历史加入(合并)一起</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的博客</title>
+      <link href="/2019/11/29/myblog/"/>
+      <url>/2019/11/29/myblog/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
